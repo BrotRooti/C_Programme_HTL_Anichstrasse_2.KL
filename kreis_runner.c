@@ -17,7 +17,8 @@ void KreisWanderung (float fWinkel,int iMitte, int iRadius, int cZeichen, int iD
         GotoXY(iSpalte,iZeile);
         printf("%c",cZeichen);
         Delay(iDelay);
-        ClrScr();
+        GotoXY(iSpalte,iZeile);
+        printf(" ");
         fWinkel ++;
     }
 

@@ -1,7 +1,4 @@
 //
-// Created by sepp2 on 30.11.2022.
-//
-//
 // Created by Phillip on 16.11.2022.
 //
 #include <stdio.h>
@@ -11,45 +8,47 @@
 // iZeileOben,iSpalteLinks,iZeileUnten,iSpalteRechts are the coordinates of the rectangle
 // cZeichen is the character that is moving
 // iDelay is the delay between each movement
-void RechteckWanderung (iZeileOben,iSpalteLinks,iZeileUnten,iSpalteRechts,cZeichen,iDelay)
+void RechteckWanderung (int iZeileOben,int iSpalteLinks,int iZeileUnten,int iSpalteRechts,char cZeichen,int iDelay)
 {
-    int iX,iY,iRichtung;
-    iX=iSpalteLinks;
-    iY=iZeileOben;
+    int iXPos;
+	int iYPos;
+	int iRichtung;
+    iXPos=iSpalteLinks;
+    iYPos=iZeileOben;
     iRichtung=1;
-    while (1)
+    while (1==1)
     {
-        GotoXY(iX,iY);
+        GotoXY(iXPos,iYPos);
         printf("%c",cZeichen);
         Delay(iDelay);
-        GotoXY(iX,iY);
+        GotoXY(iXPos,iYPos);
         printf(" ");
         switch (iRichtung)
         {
             case 1:
-                iX++;
-                if (iX==iSpalteRechts)
+                iXPos++;
+                if (iXPos==iSpalteRechts)
                 {
                     iRichtung=2;
                 }
                 break;
             case 2:
-                iY++;
-                if (iY==iZeileUnten)
+                iYPos++;
+                if (iYPos==iZeileUnten)
                 {
                     iRichtung=3;
                 }
                 break;
             case 3:
-                iX--;
-                if (iX==iSpalteLinks)
+                iXPos--;
+                if (iXPos==iSpalteLinks)
                 {
                     iRichtung=4;
                 }
                 break;
             case 4:
-                iY--;
-                if (iY==iZeileOben)
+                iYPos--;
+                if (iYPos==iZeileOben)
                 {
                     iRichtung=1;
                 }
@@ -58,25 +57,6 @@ void RechteckWanderung (iZeileOben,iSpalteLinks,iZeileUnten,iSpalteRechts,cZeich
     }
 }
 
-void HLinie(int iZeile, int iStartSpalte, int iEndSpalte, char cZeichen){
-    int iSpalte;
-    for (iSpalte = iStartSpalte; iSpalte <= iEndSpalte; iSpalte++){
-
-        GotoZS(iZeile, iSpalte);
-        printf("%c",cZeichen);
-    }
-    printf("\n");
-}
-
-void VLinie(int iStartZeile, int iEndZeile, int iSpalte, char cZeichen){
-    int iZeile;
-    for (iZeile = iStartZeile; iZeile <= iEndZeile; iZeile++){
-
-        GotoZS(iZeile, iSpalte);
-        printf("%c",cZeichen);
-    }
-    printf("\n");
-}
 
 
 int main ()
