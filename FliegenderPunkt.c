@@ -31,7 +31,7 @@ void FliegendesTeil (int iZeileOben,int iSpalteLinks,int iZeileUnten,int iSpalte
         iNeueZeile=iZeile+iRichtungZeile;
         if ( (iSpalteLinks < iNeueSpalte) && (iNeueSpalte<iSpalteRechts)){
             // im erlaubten Bereich
-            iSpalte=iNeueSpalte;
+            //iSpalte=iNeueSpalte;
         }
         else{
             // nicht im erlaubten Bereich
