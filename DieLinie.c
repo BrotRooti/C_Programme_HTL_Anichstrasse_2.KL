@@ -34,5 +34,6 @@ int main() {
     VLinie(11, 13, 0);
     VLinie(11, 13, 50);
     HLinie(14, 0, 50);
+    Delay(10000);
     return 0;
 }
